@@ -1,0 +1,6 @@
+# IGNORAR ARCHIVOS DE VISUAL STUDIO
+.vs/
+bin/
+obj/
+*.user
+*.suo
