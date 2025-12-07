@@ -10,7 +10,7 @@ using WebApp.Model;
 
 namespace WebApp.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    
     public class InscripcionsController : Controller
     {
     

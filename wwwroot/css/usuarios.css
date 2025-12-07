@@ -1,0 +1,82 @@
+﻿h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+
+p a {
+    background-color: #3498db;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color .3s ease;
+}
+
+    p a:hover {
+        background-color: #2980b9;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+    .table thead {
+        background-color: #34495e;
+        color: white;
+    }
+
+    .table th, .table td {
+        padding: 14px 16px;
+        text-align: left;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f4f6f7;
+    }
+
+    
+    .table tbody tr:hover {
+        background-color: #e8f4fc;
+        transition: background-color .2s ease;
+    }
+
+    
+    .table td a {
+        color: #2980b9;
+        font-weight: 600;
+        text-decoration: none;
+        margin-right: 8px;
+    }
+
+        .table td a:hover {
+            text-decoration: underline;
+        }
+
+
+a[asp-action="Edit"] {
+    color: #27ae60;
+}
+
+a[asp-action="Details"] {
+    color: #8e44ad;
+}
+
+a[asp-action="Delete"] {
+    color: #c0392b;
+}
+
+    a[asp-action="Edit"]:hover,
+    a[asp-action="Details"]:hover,
+    a[asp-action="Delete"]:hover {
+        text-decoration: underline;
+    }
