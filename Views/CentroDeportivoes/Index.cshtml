@@ -1,78 +1,56 @@
 ﻿@model IEnumerable<WebApp.Model.CentroDeportivo>
 
-@{
-    ViewData["Title"] = "Index";
-}
+    @{
+    ViewData["Title"] = "Centros Deportivos";
+    }
 
-<h1>Index</h1>
+    <link rel="stylesheet" href="~/css/centrodeportivo.css" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Correo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apertura)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cierre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Capacidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Correo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apertura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cierre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Rut">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Rut">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Rut">Delete</a>
-            </td>
-        </tr>
+    <nav class="nav_menu">
+        <ul class="nav_links">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/acercade">Acerca de</a></li>
+            <li><a href="/centrosdeportivos">Centros deportivos</a></li>
+            <li><a href="/info">Info</a></li>
+            <li><a href="/mapa">Mapa</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/registro">Registro</a></li>
+        </ul>
+    </nav>
 
-}
-    </tbody>
-</table>
+    <main class="centros-container">
+        <h2>Centros Deportivos Disponibles</h2>
+        <p>
+            Aquí encontrarás una lista de centros deportivos registrados en nuestra plataforma,
+            con información de ubicación, horarios y servicios disponibles.
+        </p>
+
+        <section class="card-container">
+
+            @foreach (var item in Model)
+        {
+            <article class="card">
+                <img src="~/images/centro-default.jpg" alt="@item.Nombre" />
+
+                <h2>@item.Nombre</h2>
+
+                <p><strong>Ubicación:</strong> @item.Direccion</p>
+                <p><strong>Teléfono:</strong> @item.Telefono</p>
+                <p><strong>Correo:</strong> @item.Correo</p>
+
+                <p><strong>Horario:</strong> @item.Apertura - @item.Cierre</p>
+
+                <p><strong>Capacidad:</strong> @item.Capacidad personas</p>
+
+                <p><strong>Estado:</strong> @(item.Estado ? "Activo" : "Inactivo")</p>
+
+                <div class="card-buttons">
+                    <a class="btn-card" asp-action="Edit" asp-route-id="@item.Rut">Editar</a>
+                    <a class="btn-card" asp-action="Details" asp-route-id="@item.Rut">Detalles</a>
+                    <a class="btn-card btn-delete" asp-action="Delete" asp-route-id="@item.Rut">Eliminar</a>
+                </div>
+            </article>
+        }
+
+        </section>
+    </main>

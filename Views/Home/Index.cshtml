@@ -1,17 +1,103 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "E.V.A";
 }
 
-<div class="text-center">
-    <h1 class="display-4">E.V.A</h1>
-    <div class="card" style="width: 18rem;">
-        <img src="imagen.jpg" class="card-img-top" alt="imagen">
-        <div class="card-body">
-            <h5 class="card-title">Título</h5>
-            <p class="card-text">Descripción de la tarjeta.</p>
-            <a href="Usuarios" class="btn btn-primary">Ver más</a>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.V.A</title>
 
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="nav container">
+            <h2 class="nav__title">E.V.A Entrenamiento voluntario activo</h2>
+
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items"><a href="/registro" class="nav__links">Registrate</a></li>
+                <li class="nav__items"><a href="/acercade" class="nav__links">Acerca de</a></li>
+                <li class="nav__items"><a href="/centrosdeportivos" class="nav__links">Centros deportivos</a></li>
+                <li class="nav__items"><a href="/info" class="nav__links">Info</a></li>
+                <li class="nav__items"><a href="/login" class="nav__links">Login</a></li>
+                <li class="nav__items"><a href="/mapa" class="nav__links">Mapa</a></li>
+                <li class="nav__items"><a href="/usuario" class="nav__links">Lista Usuarios</a></li>
+                <li class="nav__items"><a href="/usuario/nuevo" class="nav__links">Nuevo Usuario</a></li>
+                <li class="nav__items"><a href="/correo/masivo" class="nav__links">Enviar Correo</a></li>
+                <li class="nav__items"><a href="/perfilusuario" class="nav__links">Perfil</a></li>
+            </ul>
+
+            <div class="nav__menu">
+                <img src="/images/menu.svg" alt="menu" class="nav__img">
+            </div>
+        </nav>
+
+        <section class="hero__container">
+            <h1 class="hero__title">E.V.A</h1>
+            <p class="hero__paragraph">Entrenamiento voluntario activo</p>
+            <a href="/registro" class="cta">Comenzar</a>
+        </section>
+    </header>
+
+    <main>
+        <section class="container about">
+            <h2 class="subtitle">Qué veremos en E.V.A</h2>
+            <p class="about__paragraph">
+                E.V.A es un software diseñado para combatir el sedentarismo...
+            </p>
+
+            <div class="about__main">
+                <article class="about__icons">
+                    <img src="/images/leftarrow.svg" class="about__icon">
+                    <h3 class="about__title">Localización</h3>
+                    <p class="about__paragraph">Encuentra centros deportivos...</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="/images/rightarrow.svg" class="about__icon">
+                    <h3 class="about__title">Valoraciones</h3>
+                    <p class="about__paragraph">Deja reseñas...</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="/images/leftarrow.svg" class="about__icon">
+                    <h3 class="about__title">Registro</h3>
+                    <p class="about__paragraph">Crea tu cuenta fácilmente...</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Aquí sigue TODO tu HTML igual, solamente cambiando th: por atributos normales -->
+
+    </main>
+
+    <footer class="footer">
+        <section class="footer__container container">
+            <nav class="nav">
+                <ul class="nav__link nav__link--footer">
+                    <li class="nav__items"><a href="/registro" class="nav__links">Registrate</a></li>
+                    <li class="nav__items"><a href="/acercade" class="nav__links">Acerca de</a></li>
+                    <li class="nav__items"><a href="/centrosdeportivos" class="nav__links">Centro deportivo</a></li>
+                    <li class="nav__items"><a href="/info" class="nav__links">Info</a></li>
+                    <li class="nav__items"><a href="/login" class="nav__links">Login</a></li>
+                    <li class="nav__items"><a href="/mapa" class="nav__links">Mapa</a></li>
+                    <li class="nav__items"><a href="/usuario" class="nav__links">Lista Usuarios</a></li>
+                    <li class="nav__items"><a href="/usuario/nuevo" class="nav__links">Nuevo Usuario</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="footer__copy container">
+            <h3 class="footer__copyright">Derechos reservados © SD</h3>
+        </section>
+    </footer>
+
+    <script src="/js/slider.js"></script>
+    <script src="/js/questions.js"></script>
+
+</body>
+</html>
