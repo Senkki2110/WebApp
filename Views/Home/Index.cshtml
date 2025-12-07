@@ -1,17 +1,57 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<WebApp.Model.CentroDeportivo>
+
+@{
+    ViewData["Title"] = "Centros Deportivos";
 }
 
-<div class="text-center">
-    <h1 class="display-4">E.V.A</h1>
-    <div class="card" style="width: 18rem;">
-        <img src="imagen.jpg" class="card-img-top" alt="imagen">
-        <div class="card-body">
-            <h5 class="card-title">Título</h5>
-            <p class="card-text">Descripción de la tarjeta.</p>
-            <a href="Usuarios" class="btn btn-primary">Ver más</a>
-        </div>
-    </div>
+<link rel="stylesheet" href="~/css/centrodeportivo.css" />
 
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<nav class="nav_menu">
+    <ul class="nav_links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/acercade">Acerca de</a></li>
+        <li><a href="/centrosdeportivos">Centros deportivos</a></li>
+        <li><a href="/info">Info</a></li>
+        <li><a href="/mapa">Mapa</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/registro">Registro</a></li>
+    </ul>
+</nav>
+
+<main class="centros-container">
+    <h2>Centros Deportivos Disponibles</h2>
+    <p>
+        Aquí encontrarás una lista de centros deportivos registrados en nuestra plataforma,
+        con información de ubicación, horarios y servicios disponibles.
+    </p>
+
+    <section class="card-container">
+
+        @foreach (var item in Model)
+        {
+            <article class="card">
+                <img src="~/images/centro-default.jpg" alt="@item.Nombre" />
+
+                <h2>@item.Nombre</h2>
+
+                <p><strong>Ubicación:</strong> @item.Direccion</p>
+                <p><strong>Teléfono:</strong> @item.Telefono</p>
+                <p><strong>Correo:</strong> @item.Correo</p>
+
+                <p><strong>Horario:</strong> @item.Apertura - @item.Cierre</p>
+
+                <p><strong>Capacidad:</strong> @item.Capacidad personas</p>
+
+                <!-- 🔧 LÍNEA CORREGIDA: usamos comparación string -->
+                <p><strong>Estado:</strong> @(item.Estado == "Activo" ? "Activo" : "Inactivo")</p>
+
+                <div class="card-buttons">
+                    <a class="btn-card" asp-action="Edit" asp-route-id="@item.Rut">Editar</a>
+                    <a class="btn-card" asp-action="Details" asp-route-id="@item.Rut">Detalles</a>
+                    <a class="btn-card btn-delete" asp-action="Delete" asp-route-id="@item.Rut">Eliminar</a>
+                </div>
+            </article>
+        }
+
+    </section>
+</main>
