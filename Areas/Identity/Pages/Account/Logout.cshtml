@@ -1,7 +1,10 @@
 ﻿@page
 @model LogoutModel
+@section Styles {
+    <link rel="stylesheet" href="~/css/logout.css" />
+}
 @{
-    ViewData["Title"] = "Log out";
+    ViewData["Title"] = "Logout";
 }
 
 <header>
@@ -15,7 +18,7 @@
         }
         else
         {
-            <p>You have successfully logged out of the application.</p>
+            <p>Te has loggeado en la aplicaccion correctamente.</p>
         }
     }
 </header>

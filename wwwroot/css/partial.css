@@ -1,0 +1,56 @@
+﻿/* Contenedor general del menú */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Elementos del menú */
+.nav-item {
+    position: relative;
+}
+
+/* Enlaces del menú */
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+    /* Hover */
+    .nav-link:hover {
+        background-color: #f2f2f2;
+        color: #000 !important;
+    }
+
+/* Botón Logout como enlace */
+#logout {
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+/* Form-inline fix para alineación */
+#logoutForm {
+    margin: 0;
+    padding: 0;
+}
+
+/* Mensaje "Hello user" */
+#manage {
+    font-weight: 600;
+}
+
+/* Versión para móviles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

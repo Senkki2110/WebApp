@@ -65,8 +65,7 @@ a[asp-action="Create"] {
         
         .table a:nth-child(2) {
             color: #17a2b8;
-        }
-       
+        }       
         .table a:nth-child(3) {
             color: #dc3545;
         }

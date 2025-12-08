@@ -1,5 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using WebApp.Data
+@section Styles {
+    <link rel="stylesheet" href="~/css/partial.css" />
+}
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
