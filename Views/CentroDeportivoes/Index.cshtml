@@ -1,11 +1,6 @@
 ﻿@model IEnumerable<WebApp.Model.CentroDeportivo>
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/centrosdeportivo.css" />
-}
-
-
-@{
+    @{
     ViewData["Title"] = "Centros Deportivos";
     }
 
@@ -47,7 +42,8 @@
 
                 <p><strong>Capacidad:</strong> @item.Capacidad personas</p>
 
-                <strong>Estado:</strong> @item.Estado
+                <p><strong>Estado:</strong> @(item.Estado == "Activo" ? "Activo" : "Inactivo")</p>
+
 
                 <div class="card-buttons">
                     <a class="btn-card" asp-action="Edit" asp-route-id="@item.Rut">Editar</a>
