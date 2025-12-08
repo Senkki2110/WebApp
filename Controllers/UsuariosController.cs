@@ -10,7 +10,7 @@ using WebApp.Model;
 
 namespace WebApp.Controllers
 {
-   
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly ProyectoContext _context;
